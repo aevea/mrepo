@@ -1,0 +1,33 @@
+{
+  "root": "packages/omnisi/cli",
+  "sourceRoot": "packages/omnisi/cli/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/omnisi/cli",
+        "tsConfig": "packages/omnisi/cli/tsconfig.lib.json",
+        "packageJson": "packages/omnisi/cli/package.json",
+        "main": "packages/omnisi/cli/src/index.ts",
+        "assets": ["packages/omnisi/cli/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/omnisi/cli/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "vitest",
+        "cwd": "packages/omnisi/cli"
+      }
+    }
+  },
+  "tags": []
+}
