@@ -11,14 +11,14 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
         "accessToken": "MGQzYzM5NGMtNmUxOS00YzUyLWEyMWItOGY2NGYyYmQ0NzE3fHJlYWQtd3JpdGU="
       }
+    }
+  },
+  "generators": {
+    "@nrwl/node:library": {
+      "unitTestRunner": "none"
     }
   }
 }
