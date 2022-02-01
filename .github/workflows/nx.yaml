@@ -1,0 +1,39 @@
+name: CI
+on:
+  # push:
+  #   branches:
+  #     - main
+  pull_request:
+
+jobs:
+  pr:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v2
+      - name: asdf_install
+        uses: asdf-vm/actions/install@v1
+
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.28.0
+          run_install: true
+
+      - name: Linting
+        run: pnpm nx affected:lint
+
+      - name: Testing
+        run: pnpm nx affected:test
