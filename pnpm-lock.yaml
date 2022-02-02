@@ -18,7 +18,7 @@ specifiers:
   eslint-config-prettier: 8.3.0
   jest: 27.2.3
   prettier: 2.5.1
-  ts-jest: 27.0.5
+  ts-jest: 27.1.3
   tslib: 2.3.1
   typescript: 4.5.5
   vite: 2.7.13
@@ -45,7 +45,7 @@ devDependencies:
   eslint-config-prettier: 8.3.0_eslint@8.8.0
   jest: 27.2.3
   prettier: 2.5.1
-  ts-jest: 27.0.5_227fbc629be1b82a2ac5dd91da2eb1f8
+  ts-jest: 27.1.3_227fbc629be1b82a2ac5dd91da2eb1f8
   typescript: 4.5.5
   vite: 2.7.13
   vitest: 0.2.5
@@ -3928,6 +3928,10 @@ packages:
       p-locate: 4.1.0
     dev: true
 
+  /lodash.memoize/4.1.2:
+    resolution: {integrity: sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=}
+    dev: true
+
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
     dev: true
@@ -4815,14 +4819,15 @@ packages:
     hasBin: true
     dev: true
 
-  /ts-jest/27.0.5_227fbc629be1b82a2ac5dd91da2eb1f8:
-    resolution: {integrity: sha512-lIJApzfTaSSbtlksfFNHkWOzLJuuSm4faFAfo5kvzOiRAuoN4/eKxVJ2zEAho8aecE04qX6K1pAzfH5QHL1/8w==}
+  /ts-jest/27.1.3_227fbc629be1b82a2ac5dd91da2eb1f8:
+    resolution: {integrity: sha512-6Nlura7s6uM9BVUAoqLH7JHyMXjz8gluryjpPXxr3IxZdAXnU6FhjvVLHFtfd1vsE1p8zD1OJfskkc0jhTSnkA==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     hasBin: true
     peerDependencies:
       '@babel/core': '>=7.0.0-beta.0 <8'
       '@types/jest': ^27.0.0
       babel-jest: '>=27.0.0 <28'
+      esbuild: ~0.14.0
       jest: ^27.0.0
       typescript: '>=3.8 <5.0'
     peerDependenciesMeta:
@@ -4832,6 +4837,8 @@ packages:
         optional: true
       babel-jest:
         optional: true
+      esbuild:
+        optional: true
     dependencies:
       '@types/jest': 27.0.2
       bs-logger: 0.2.6
@@ -4839,11 +4846,11 @@ packages:
       jest: 27.2.3
       jest-util: 27.4.2
       json5: 2.2.0
-      lodash: 4.17.21
+      lodash.memoize: 4.1.2
       make-error: 1.3.6
       semver: 7.3.5
       typescript: 4.5.5
-      yargs-parser: 20.0.0
+      yargs-parser: 20.2.9
     dev: true
 
   /ts-loader/9.2.6_typescript@4.5.5+webpack@5.68.0:
